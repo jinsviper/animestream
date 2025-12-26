@@ -1,0 +1,119 @@
+/* =========================================
+   1. GLOBAL STYLES & CORE LAYOUT
+   ========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+html { scroll-behavior: smooth; }
+body { background-color: #0f0f0f; color: white; overflow-x: hidden; }
+
+/* NAVBAR */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 5%; background: #141414; border-bottom: 2px solid #e50914;
+    position: sticky; top: 0; z-index: 1000;
+}
+.logo { font-size: 24px; font-weight: bold; }
+.logo span { color: #e50914; }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
+.nav-links a:hover { color: #e50914; }
+
+/* HERO SECTION */
+.hero {
+    height: 70vh; 
+    background: linear-gradient(to top, #0f0f0f, transparent), url('https://images.alphacoders.com/134/1346215.png');
+    background-size: cover; background-position: center; 
+    display: flex; align-items: center; padding: 0 5%;
+}
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
+
+/* =========================================
+   2. VIDEO PLAYER (Mistake Fixed)
+   ========================================= */
+.container { 
+    display: none; /* Hidden by default via JS */
+    padding: 40px 5%; background: #1a1a1a; margin-top: 20px;
+    border-bottom: 1px solid #333;
+}
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.video-info { padding: 20px 0; }
+.hero-btns { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+
+.btn-play, .btn-info, .btn-affiliate {
+    padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; transition: 0.3s;
+}
+.btn-play { background: white; color: black; }
+.btn-info { background: rgba(109, 109, 110, 0.7); color: white; }
+.btn-affiliate { background: #ff9900; color: black; }
+.btn-play:hover, .btn-info:hover { opacity: 0.8; transform: scale(1.05); }
+
+/* =========================================
+   3. SEARCH & GRIDS
+   ========================================= */
+.search-container { padding: 40px 5%; background: #0f0f0f; }
+.search-wrapper { display: flex; background: #222; border-radius: 5px; overflow: hidden; max-width: 800px; margin: 0 auto; border: 1px solid #333; }
+.genre-dropdown { background: #333; color: white; border: none; padding: 10px; cursor: pointer; }
+#userQuery { flex: 1; padding: 15px; background: transparent; border: none; color: white; outline: none; }
+.main-search-btn { background: #e50914; color: white; border: none; padding: 0 25px; cursor: pointer; font-weight: bold; }
+
+.anime-grid, .trending-wrapper { display: flex; gap: 20px; padding: 20px 0; overflow-x: auto; scrollbar-width: none; }
+.anime-grid::-webkit-scrollbar, .trending-wrapper::-webkit-scrollbar { display: none; }
+
+.anime-card { min-width: 200px; background: #1a1a1a; border-radius: 8px; transition: 0.3s; cursor: pointer; border: 1px solid transparent; }
+.anime-card:hover { transform: translateY(-10px); border-color: #e50914; }
+.anime-card img { width: 100%; height: 280px; object-fit: cover; border-radius: 8px 8px 0 0; }
+.anime-info { padding: 10px; font-size: 14px; text-align: center; }
+
+/* =========================================
+   4. NEWS & REQUEST SECTION (The Missing Code)
+   ========================================= */
+.news-container { padding: 40px 5%; }
+.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.news-card { background: #1a1a1a; border-radius: 8px; overflow: hidden; border: 1px solid #333; }
+.news-card img { width: 100%; height: 180px; object-fit: cover; }
+.news-content { padding: 15px; }
+.news-content a { color: #e50914; text-decoration: none; font-weight: bold; }
+
+/* REQUEST ANIME SECTION STYLE */
+.contact-section { 
+    background: #151515; 
+    padding: 60px 5%; 
+    border-radius: 15px; 
+    margin: 40px 5%; 
+    text-align: center; 
+    border: 1px solid #333;
+}
+.contact-section h2 { font-size: 2rem; margin-bottom: 10px; color: #e50914; }
+.contact-form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    max-width: 600px; 
+    margin: 25px auto; 
+}
+.contact-form input, .contact-form textarea { 
+    padding: 15px; 
+    background: #0f0f0f; 
+    border: 1px solid #333; 
+    color: white; 
+    border-radius: 5px; 
+    outline: none; 
+    font-size: 16px;
+    transition: 0.3s;
+}
+.contact-form input:focus, .contact-form textarea:focus { border-color: #e50914; }
+.contact-form textarea { height: 120px; resize: none; }
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
+.footer { padding: 40px 5%; text-align: center; background: #000; color: #555; font-size: 13px; border-top: 1px solid #333; }
+.footer-links { margin-bottom: 15px; }
+.footer-links a { color: #888; text-decoration: none; margin: 0 10px; }
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    .contact-section { margin: 20px 2%; padding: 40px 5%; }
+}

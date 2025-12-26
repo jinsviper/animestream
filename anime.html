@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeStream | Watch Free Trailers & News</title>
+    <link rel="stylesheet" href="anime.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Anime<span>Stream</span></div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="location.reload()">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#watchlist-section">My Watchlist</a></li>
+            <li><a href="#contact">Request</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="trending-tag">#1 Trending</span>
+            <h1>SOLO LEVELING</h1>
+            <p>The journey of the world's weakest hunter begins. Watch the official trailers and get updates.</p>
+        </div>
+    </header>
+
+    <main class="container" id="main-video" style="display: none;">
+        <div class="video-wrapper">
+            <iframe id="main-video-player" src="" frameborder="0" allow="autoplay"></iframe>
+        </div>
+        <div class="video-info">
+            <h2 id="video-title">Select an Anime</h2>
+            <div class="hero-btns">
+                <button id="add-watchlist-btn" class="btn-info">+ Add to Watchlist</button>
+                <a href="#" id="affiliate-link" class="btn-affiliate" target="_blank">
+                    <i class="fas fa-shopping-cart"></i> Buy Merchandise
+                </a>
+                <a href="#" id="redirect-link" class="btn-play" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Stream Official
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <div class="search-container">
+        <div class="search-wrapper">
+            <select id="genreSelect" class="genre-dropdown">
+                <option value="">All Genres</option>
+                <option value="1">Action</option>
+                <option value="10">Fantasy</option>
+                <option value="4">Comedy</option>
+            </select>
+            <input type="text" id="userQuery" placeholder="Search 20,000+ Anime...">
+            <button onclick="searchLiveAnime()" class="main-search-btn">Search</button>
+        </div>
+        <div id="searchResults" class="anime-grid"></div>
+    </div>
+
+    <section id="watchlist-section" style="display: none; padding: 40px 5%;">
+        <h2 class="section-title">My Watchlist</h2>
+        <div id="watchlist-list" class="trending-wrapper"></div>
+        <button onclick="clearWatchlist()" style="margin-top:10px; color:#e50914; background:none; border:none; cursor:pointer; font-weight:bold;">
+            <i class="fas fa-trash"></i> Clear All
+        </button>
+    </section>
+
+    <section class="api-container" style="padding: 40px 5%;">
+        <h2 class="section-title">Trending Now</h2>
+        <div id="anime-list" class="trending-wrapper"></div>
+    </section>
+
+    <section id="news" class="news-container">
+        <h2 class="section-title">Latest Anime News</h2>
+        <div id="news-feed" class="news-grid"></div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Request an Anime</h2>
+        <form action="https://formspree.io/f/xbdjlvwe" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="What anime should we add?" required></textarea>
+            <button type="submit" class="main-search-btn">Send Request</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links" style="margin-bottom: 20px;">
+            <a href="privacy.html" style="color: #888; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
+            <a href="terms.html" style="color: #888; text-decoration: none; margin: 0 10px;">Terms of Service</a>
+        </div>
+        <div class="disclaimer-box">
+            <p><strong>Disclaimer:</strong> AnimeStream is a fan-based project for educational use. We do not host video content on our servers. All rights and trademarks belong to their respective owners.</p>
+        </div>
+        <p>&copy; 2025 AnimeStream. Built for the community.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
